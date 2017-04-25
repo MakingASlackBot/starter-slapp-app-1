@@ -64,12 +64,24 @@ function getFakeData() {
 }
 
 function getMessages() {
+	
+	//todo: foreach
 	console.log(fakeData.issues[0].key);
+	var title = fakeData.issues[0].key;
+	var summary = fakeData.issues[0].summary;
+	var assignee = fakeData.issues[0].assignee;
+	var status = fakeData.issues[0].status.name;
+	var link = "https://jira.praeses.com/browse/" + title;
+	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
 }
 
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
+
+slapp.message('Where are my tickets?', ['mention', 'direct_message'], (msg) => {	
+	msg.say(getMessages())
+})
 
 // response to the user typing "help"
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
