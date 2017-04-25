@@ -70,7 +70,7 @@ function getMessages() {
 	var title = fakeData.issues[0].key;
 	var summary = fakeData.issues[0].summary;
 	var assignee = fakeData.issues[0].assignee;
-	var status = fakeData.issues[0].status.name;
+	var status = fakeData.issues[0].fields.status.name;
 	var link = "https://jira.praeses.com/browse/" + title;
 	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
 }
