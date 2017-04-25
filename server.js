@@ -47,8 +47,8 @@ function testjira()
 			}
 			console.log('headers', res.headers)
 			console.log('status code', res.statuscode)
-			var json = json.parse(body);
-			console.log(json);
+			//var json = json.parse(body);
+			console.log(body);
 	});
 }
 
