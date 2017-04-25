@@ -68,8 +68,8 @@ function getMessages() {
 	//todo: foreach
 	console.log(fakeData.issues[0].key);
 	var title = fakeData.issues[0].key;
-	var summary = fakeData.issues[0].summary;
-	var assignee = fakeData.issues[0].assignee;
+	var summary = fakeData.issues[0].fields.summary;
+	var assignee = fakeData.issues[0].fields.assignee.name;
 	var status = fakeData.issues[0].fields.status.name;
 	var link = "https://jira.praeses.com/browse/" + title;
 	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
