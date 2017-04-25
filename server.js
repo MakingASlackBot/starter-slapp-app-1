@@ -56,6 +56,7 @@ I will respond to the following messages:
 // var jiraObject = testJira();
 
 var fakeData = getFakeData();
+var fakeMessage = getMessages();
 
 function getFakeData() { 
 	var obj = require('./json/fake-data.json');
