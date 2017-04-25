@@ -66,11 +66,11 @@ function getFakeData() {
 function getMessages() {
 	
 	//todo: foreach
-	console.log(fakeData.issues[0].key);
-	var title = fakeData.issues[0].key;
-	var summary = fakeData.issues[0].fields.summary;
-	var assignee = fakeData.issues[0].fields.assignee.name;
-	var status = fakeData.issues[0].fields.status.name;
+	console.log(fakeData.issues[2].key);
+	var title = fakeData.issues[2].key;
+	var summary = fakeData.issues[2].fields.summary;
+	var assignee = fakeData.issues[2].fields.assignee.name;
+	var status = fakeData.issues[2].fields.status.name;
 	var link = "https://jira.praeses.com/browse/" + title;
 	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
 }
