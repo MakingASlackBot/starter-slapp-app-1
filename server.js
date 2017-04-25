@@ -44,13 +44,13 @@ request(
     },
     function (error, response, body) {
 		console.log("inside JIRA");
-		if (err) {
-			console.dir(err)
+		if (error) {
+			console.log(error)
 			return
 		}
-		console.dir('headers', res.headers)
-		console.dir('status code', res.statusCode)
-		console.dir(body)
+		console.log('headers', res.headers)
+		console.log('status code', res.statusCode)
+		console.log(body)
     }
 );
 }
