@@ -7,10 +7,10 @@ const Context = require('slapp-context-beepboop')
 const request = require('request')
 
 const options = {  
-    url: 'https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart',
+    url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',
     method: 'GET',
     headers: {
-        'Authorization' : 'Basic bXJzZmFrZTpzb2NjZXIxMg==',
+        'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
 		'content-type' : 'application/json'
     }
 };
@@ -35,25 +35,25 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-// function testJira()
-// {
-	// console.log("this function fires");
+function testjira()
+{
+	console.log("this function fires");
 
-	// request(options, function(err, res, body){
-		// console.log("inside JIRA")
-			// if (err) {
-				// console.log(err)
-				// return
-			// }
-			// console.log('headers', res.headers)
-			// console.log('status code', res.statusCode)
-			// var json = JSON.parse(body);
-			// console.log(json);
-	// });
-// }
+	request(options, function(err, res, body){
+		console.log("inside jira")
+			if (err) {
+				console.log(err)
+				return
+			}
+			console.log('headers', res.headers)
+			console.log('status code', res.statuscode)
+			var json = json.parse(body);
+			console.log(json);
+	});
+}
 
 
-// var jiraObject = testJira();
+var jiraobject = testjira();
 
 var fakeData = getFakeData();
 var fakeMessage = getMessages();
@@ -66,6 +66,7 @@ function getFakeData() {
 function getMessages() {
 	
 	//todo: foreach
+	
 	console.log(fakeData.issues[2].key);
 	var title = fakeData.issues[2].key;
 	var summary = fakeData.issues[2].fields.summary;
