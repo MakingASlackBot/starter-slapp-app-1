@@ -58,8 +58,7 @@ I will respond to the following messages:
 var fakeData = getFakeData();
 
 function getFakeData() { 
-	var fs = require('./json/fake-data.json');
-	var obj = JSON.parse(fs);
+	var obj = require('./json/fake-data.json');
 	console.log(obj);
 	return obj;
 }
