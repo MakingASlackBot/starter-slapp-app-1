@@ -59,8 +59,11 @@ var fakeData = getFakeData();
 
 function getFakeData() { 
 	var obj = require('./json/fake-data.json');
-	console.log(obj);
 	return obj;
+}
+
+function getMessages() {
+	console.log(fakeData.issues[0].key);
 }
 
 //*********************************************
