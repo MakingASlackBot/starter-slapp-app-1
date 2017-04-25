@@ -90,8 +90,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
 slapp
-  .message('^(hi|hello|hey)$', ['direct_mention', 'direct_message'], (msg, text) => {	
-	console.log(jiraObject);
+  .message('^(hi|hello|hey)$', ['direct_mention', 'direct_message'], (msg, text) => {		
 	msg	  
       .say("you suck")
       // sends next event from user to this route, passing along state
