@@ -10,8 +10,8 @@ const options = {
     url: 'https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart',
     method: 'GET',
     headers: {
-        'user': 'mrsfake',
-        'password': 'soccer12'
+        'Authorization' : 'Basic bXJzZmFrZTpzb2NjZXIxMg==',
+		'content-type' : 'application/json'
     }
 };
 
@@ -50,6 +50,13 @@ function testJira()
 			var json = JSON.parse(body);
 			console.log(json);
 	}
+	
+	request(url, function(error, response, data){
+		if (!error && response.statusCode == 200){
+			var parsedData = JSON.parse(data);
+			parseForecastMessage(bot,message,controller,location,parsedData);
+		}
+	});
 	);
 }
 
