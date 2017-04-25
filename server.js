@@ -6,6 +6,15 @@ const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const request = require('request')
 
+const options = {  
+    url: 'https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart',
+    method: 'GET',
+    headers: {
+        'user': 'mrsfake',
+        'password': 'soccer12'
+    }
+};
+
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
 
@@ -29,30 +38,19 @@ I will respond to the following messages:
 function testJira()
 {
 	console.log("this function fires");
-	var username = "mrsfake";
-	var password = "soccer12";
-	var request = require('request'),
-    url = "https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart";	
 
-request(
-    {
-        url : url,
-        headers : {
-            user : username, 
-			password : password
-        }
-    },
-    function (error, response, body) {
-		console.log("inside JIRA");
-		if (error) {
-			console.log(error)
-			return
-		}
-		console.log('headers', res.headers)
-		console.log('status code', res.statusCode)
-		console.log(body)
-    }
-);
+	request(options, function(err, res, body){
+		console.log("inside JIRA")
+			if (err) {
+				console.log(err)
+				return
+			}
+			console.log('headers', res.headers)
+			console.log('status code', res.statusCode)
+			var json = JSON.parse(body);
+			console.log(json);
+	}
+	);
 }
 
 
