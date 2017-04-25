@@ -29,7 +29,7 @@ I will respond to the following messages:
 function testJira()
 {
 	console.log("this function fires");
-	var username = "msfake";
+	var username = "mrsfake";
 	var password = "soccer12";
 	var request = require('request'),
     url = "https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart";	
