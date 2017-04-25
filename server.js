@@ -49,15 +49,7 @@ function testJira()
 			console.log('status code', res.statusCode)
 			var json = JSON.parse(body);
 			console.log(json);
-	}
-	
-	request(url, function(error, response, data){
-		if (!error && response.statusCode == 200){
-			var parsedData = JSON.parse(data);
-			parseForecastMessage(bot,message,controller,location,parsedData);
-		}
 	});
-	);
 }
 
 
