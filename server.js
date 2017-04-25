@@ -43,14 +43,20 @@ request(
         }
     },
     function (error, response, body) {
-        console.log(response);
-		console.log("inside testJira");
+		console.log("inside JIRA");
+		if (err) {
+			console.dir(err)
+			return
+		}
+		console.dir('headers', res.headers)
+		console.dir('status code', res.statusCode)
+		console.dir(body)
     }
 );
 }
 
 
-testJira();
+var jiraObject = testJira();
 
 //*********************************************
 // Setup different handlers for messages
@@ -64,6 +70,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
 slapp
   .message('^(hi|hello|hey)$', ['direct_mention', 'direct_message'], (msg, text) => {	
+	console.log(jiraObject);
 	msg	  
       .say("you suck")
       // sends next event from user to this route, passing along state
