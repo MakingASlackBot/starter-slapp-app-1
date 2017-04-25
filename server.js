@@ -35,25 +35,34 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-function testJira()
-{
-	console.log("this function fires");
+// function testJira()
+// {
+	// console.log("this function fires");
 
-	request(options, function(err, res, body){
-		console.log("inside JIRA")
-			if (err) {
-				console.log(err)
-				return
-			}
-			console.log('headers', res.headers)
-			console.log('status code', res.statusCode)
-			var json = JSON.parse(body);
-			console.log(json);
-	});
+	// request(options, function(err, res, body){
+		// console.log("inside JIRA")
+			// if (err) {
+				// console.log(err)
+				// return
+			// }
+			// console.log('headers', res.headers)
+			// console.log('status code', res.statusCode)
+			// var json = JSON.parse(body);
+			// console.log(json);
+	// });
+// }
+
+
+// var jiraObject = testJira();
+
+var fakeData = getFakeData();
+
+function getFakeData() { 
+	var fs = require('./json/fake-data.json');
+	var obj = JSON.parse(fs.readFileSync('file', 'utf8'));
+	console.log(obj);
+	return obj;
 }
-
-
-var jiraObject = testJira();
 
 //*********************************************
 // Setup different handlers for messages
