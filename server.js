@@ -29,15 +29,17 @@ I will respond to the following messages:
 function testJira()
 {
 	console.log("this function fires");
+	var username = "msfake";
+	var password = "soccer12";
 	var request = require('request'),
-    url = "https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart",
-	auth = "";
+    url = "https://jiradev.praeses.com/rest/api/2/search?jql=assignee=mstuart";	
 
 request(
     {
         url : url,
         headers : {
-            "Authorization" : auth
+            user : username, 
+			password : password
         }
     },
     function (error, response, body) {
