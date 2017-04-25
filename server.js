@@ -59,7 +59,7 @@ var fakeData = getFakeData();
 
 function getFakeData() { 
 	var fs = require('./json/fake-data.json');
-	var obj = JSON.parse(fs.readFileSync('file', 'utf8'));
+	var obj = JSON.parse(fs);
 	console.log(obj);
 	return obj;
 }
