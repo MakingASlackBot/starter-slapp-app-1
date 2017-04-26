@@ -2,7 +2,7 @@ var messageCreator = function () {}
 
 const request = require('request')
 
-messageCreator.prototype.getData = function(name) {
+messageCreator.prototype.getData = function(name, functionName) {
 	//todo - make api call with parameters here.
 	
 	var options = {  	
@@ -22,7 +22,7 @@ messageCreator.prototype.getData = function(name) {
 			console.log("log 1: " + body);
 			var stringToReturn = testFun(body);			
 			console.log(stringToReturn);
-			return stringToReturn;
+			functionName(stringToReturn);
 		}
 	 }
 	
