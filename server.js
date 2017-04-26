@@ -64,6 +64,8 @@ myFunction(localWhereAreMyTickets(), function(returnValue) {
   // use the return value here instead of like a regular (non-evented) return value
 });
 
+myFunction();
+
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
