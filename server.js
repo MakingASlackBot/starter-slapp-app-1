@@ -63,6 +63,11 @@ function localWhereAreMyTickets(){
 // Setup different handlers for messages
 //*********************************************
 //var jiraObject = messageCreator.getData("heather");
+var test = localWhereAreMyTickets();
+setTimeout(blah, 5000);
+function blah() {
+console.log(test);
+}
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
   msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
