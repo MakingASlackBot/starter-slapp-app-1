@@ -4,17 +4,7 @@ const express = require('express')
 const Slapp = require('slapp')
 const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
-const request = require('request')
 var messageCreator = require('./messageCreator');
-
-const options = {  
-    url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',
-    method: 'GET',
-    headers: {
-        'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
-		'content-type' : 'application/json'
-    }
-};
 
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
@@ -36,25 +26,8 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-// function testjira()
-// {
-	// console.log("this function fires");
-
-	// request(options, function(err, res, body){
-		// console.log("inside jira")
-			// if (err) {
-				// console.log(err)
-				// return
-			// }
-			// console.log('headers', res.headers)
-			// console.log('status code', res.statuscode)
-			// //var json = json.parse(body);
-			// console.log(body);
-	// });
-// }
-
-
-// var jiraobject = testjira();
+//run this to test API call
+//var jiraobject = messageCreator.getData("name");
 
 var fakeData = getFakeData();
 
