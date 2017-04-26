@@ -35,25 +35,25 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-function testjira()
-{
-	console.log("this function fires");
+// function testjira()
+// {
+	// console.log("this function fires");
 
-	request(options, function(err, res, body){
-		console.log("inside jira")
-			if (err) {
-				console.log(err)
-				return
-			}
-			console.log('headers', res.headers)
-			console.log('status code', res.statuscode)
-			//var json = json.parse(body);
-			console.log(body);
-	});
-}
+	// request(options, function(err, res, body){
+		// console.log("inside jira")
+			// if (err) {
+				// console.log(err)
+				// return
+			// }
+			// console.log('headers', res.headers)
+			// console.log('status code', res.statuscode)
+			// //var json = json.parse(body);
+			// console.log(body);
+	// });
+// }
 
 
-var jiraobject = testjira();
+// var jiraobject = testjira();
 
 var fakeData = getFakeData();
 var fakeMessage = getMessages();
