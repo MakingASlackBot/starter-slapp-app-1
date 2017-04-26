@@ -38,7 +38,7 @@ function TicketFormat(data) {
 	
 	//todo: foreach	
 	//todo: get json object via getData function				
-	console.log("Log 3: " + data[0].issues.length);
+	console.log("Log 3: " + data[0]);
 	return;
 
 	var MyTicketArray = [];
