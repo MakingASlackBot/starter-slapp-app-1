@@ -31,7 +31,7 @@ messageCreator.prototype.whereAreMyTickets = function(name) {
 	//todo: foreach
 	
 	//todo: get json object via getData function
-	var data = getData(name);
+	var data = self.getData(name);
 	console.log(data);
 	
 	var MyTicketArray = [];
@@ -73,4 +73,4 @@ messageCreator.prototype.whereAreMyTickets = function(name) {
 	return MyTicketString;
 }
 
-module.exports = new messageCreator();
+var self = module.exports = new messageCreator();
