@@ -31,7 +31,6 @@ messageCreator.prototype.getData = function(name, functionName) {
 
 function testFun(body){
 	console.log("log 2: " + body);
-	console.log("TICKET FORMAT: " + TicketFormat(body));
 	return "lol";
 }
 
