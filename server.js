@@ -42,7 +42,7 @@ I will respond to the following messages:
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
 	var jiraObject = messageCreator.getData("heather");
-	console.log(jiraObject);
+	console.log("SECOND BODY: " + jiraObject);
 	msg.say(messageCreator.whereAreMyTickets(jiraObject))
 })
 

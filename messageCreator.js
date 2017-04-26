@@ -20,7 +20,8 @@ messageCreator.prototype.getData = function(name) {
 		if (err) {
 			console.log(err)
 			return
-		}			
+		}	
+		console.log("FIRST BODY: " + body);
 		return body;
 	 });
 }
@@ -30,7 +31,7 @@ messageCreator.prototype.whereAreMyTickets = function(data) {
 	//todo: foreach
 	
 	//todo: get json object via getData function	
-	console.log(data);
+	console.log("THIRD BODY: " + data);
 	
 	var MyTicketArray = [];
 	var MyTicketString = '';
