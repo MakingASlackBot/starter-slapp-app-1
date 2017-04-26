@@ -41,7 +41,9 @@ I will respond to the following messages:
 //*********************************************
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
-	msg.say(messageCreator.whereAreMyTickets("heather"))
+	var jiraObject = messageCreator.getData("heather");
+	console.log(jiraObject);
+	msg.say(messageCreator.whereAreMyTickets(jiraObject))
 })
 
 // response to the user typing "help"

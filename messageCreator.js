@@ -21,17 +21,15 @@ messageCreator.prototype.getData = function(name) {
 			console.log(err)
 			return
 		}			
-		console.log(body);
 		return body;
 	 });
 }
 
-messageCreator.prototype.whereAreMyTickets = function(name) {
+messageCreator.prototype.whereAreMyTickets = function(data) {
 	
 	//todo: foreach
 	
-	//todo: get json object via getData function
-	var data = self.getData(name);
+	//todo: get json object via getData function	
 	console.log(data);
 	
 	var MyTicketArray = [];
