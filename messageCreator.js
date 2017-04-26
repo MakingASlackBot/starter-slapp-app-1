@@ -34,7 +34,7 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 	console.log(data.issues[2].key);
 	var MyTicketArray = [];
 	var MyTicketString = '';
-	myTicketString = "hey this is your tickets";
+	MyTicketString = "hey this is your tickets";
 	for(i = 0; i < data.issues.length; i++) {
 		console.log(data.issues.length);
 		if(data.issues[i].key =! null) {
@@ -70,7 +70,7 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 		MyTicketString += "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
 		MyTicketArray.push("```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```");
 	}
-	return myTicketString;
+	return MyTicketString;
 }
 
 module.exports = new messageCreator();
