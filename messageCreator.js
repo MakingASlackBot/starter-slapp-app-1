@@ -2,7 +2,7 @@ var messageCreator = function () {}
 
 const request = require('request')
 
-messageCreator.prototype.getData = function(name) {
+function getData(name) {
 	//todo - make api call with parameters here.
 	
 	var options = {  	
@@ -16,22 +16,26 @@ messageCreator.prototype.getData = function(name) {
 			 'content-type' : 'application/json'
 		}
 	 };
+
+	 function callback(err, res, body){
+		if (!err && response.statusCode == 200){
+			var info = body;
+			console.log("HELLOOOOO");
+			console.log(info);
+			return body;
+		}
+	 }
 	
-	 request(options, function(err, res, body){		
-		if (err) {
-			console.log(err)
-			return
-		}	
-		console.log("FIRST BODY: " + body);
-		return body;
-	 });
+	 request(options, callback);
 }
 
-messageCreator.prototype.TicketFormat = function(data) {
+messageCreator.prototype.TicketFormat = function(dataWeDontNeed) {
 	
 	//todo: foreach	
 	//todo: get json object via getData function		
 	
+	var data = getData("heather");
+
 	var MyTicketArray = [];
 	var MyTicketString = '';
 	for(i = 0; i < data.issues.length; i++) {
