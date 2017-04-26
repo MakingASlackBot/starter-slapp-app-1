@@ -27,7 +27,6 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-
 //run this to test API call 
 //var jiraObject = messageCreator.getData("name");
 
