@@ -5,31 +5,33 @@ const request = require('request')
 messageCreator.prototype.getData = function(name) {
 	//todo - make api call with parameters here.
 	
-	//var options = {  	
-		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + parameters.name,
+	var options = {  	
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + name,
+		url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20' + name + '%20and%20status%20%3D%20"In%20Dev',
 		//url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
-		//method: 'GET',
-		//headers: {
-		//	 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
-		//	 'content-type' : 'application/json'
-		//}
-	 //};
+		method: 'GET',
+		headers: {
+			 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
+			 'content-type' : 'application/json'
+		}
+	 };
 	
-	 //request(options, function(err, res, body){		
-		//if (err) {
-			//console.log(err)
-			//return
-		//}			
+	 request(options, function(err, res, body){		
+		if (err) {
+			console.log(err)
+			return
+		}			
 		//console.log(body);
-	 //});
+		return body;
+	 });
 }
 
-messageCreator.prototype.whereAreMyTickets = function(name, data) {
+messageCreator.prototype.whereAreMyTickets = function(name) {
 	
 	//todo: foreach
 	
 	//todo: get json object via getData function
-	//data = getData(name);
+	var data = getData(name);
 	
 	var MyTicketArray = [];
 	var MyTicketString = '';

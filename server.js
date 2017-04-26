@@ -27,21 +27,21 @@ I will respond to the following messages:
 `
 
 //run this to test API call
-//var jiraobject = messageCreator.getData("name");
+//var jiraObject = messageCreator.getData("name");
 
-var fakeData = getFakeData();
+// var fakeData = getFakeData();
 
-function getFakeData() { 
-	var obj = require('./json/fake-data.json');
-	return obj;
-}
+// function getFakeData() { 
+	// var obj = require('./json/fake-data.json');
+	// return obj;
+// }
 
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
-	msg.say(messageCreator.whereAreMyTickets("name here", fakeData))
+	msg.say(messageCreator.whereAreMyTickets("heather"))
 })
 
 // response to the user typing "help"
