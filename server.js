@@ -36,13 +36,38 @@ I will respond to the following messages:
 	// return obj;
 // }
 
+function localWhereAreMyTickets(){
+	var options = {  	
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + name,
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20heather%20and%20status%20%3D%20"In%20Dev"',
+		url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
+		method: 'GET',
+		headers: {
+			 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
+			 'content-type' : 'application/json'
+		}
+	 };
+	
+	 request(options, function(err, res, body){		
+		if (err) {
+			console.log(err)
+			return
+		}	
+		console.log("FIRST BODY: " + body);
+		return body;
+	 });
+}
+
+
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
 //var jiraObject = messageCreator.getData("heather");
-
+var jiraObject = localWhereAreMyTickets();
+console.log(jiraObject);
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
-	msg.say(messageCreator.whereAreMyTickets())
+	
+	msg.say(messageCreator.whereAreMyTickets(jiraObject))
 })
 
 // response to the user typing "help"
