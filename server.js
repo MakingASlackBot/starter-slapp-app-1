@@ -47,7 +47,8 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
   var callback = function(stringToReturn){
     msg.say(stringToReturn);
   }
-
+  console.log(msg);
+  console.log(msg.user);
   messageCreator.getData("heather", callback, 'whereTickets');
 })
 
