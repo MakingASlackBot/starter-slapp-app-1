@@ -21,7 +21,7 @@ function getData(name) {
 			console.log(err)
 			return
 		}			
-		//console.log(body);
+		console.log(body);
 		return body;
 	 });
 }
@@ -32,6 +32,7 @@ messageCreator.prototype.whereAreMyTickets = function(name) {
 	
 	//todo: get json object via getData function
 	var data = getData(name);
+	console.log(data);
 	
 	var MyTicketArray = [];
 	var MyTicketString = '';
