@@ -34,31 +34,32 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 	console.log(data.issues[2].key);
 	var MyTicketArray = [];
 	var MyTicketString = '';
-
+	myTicketString = "hey this is your tickets";
 	for(i = 0; i < data.issues.length; i++) {
+		console.log(data.issues.length);
 		if(data.issues[i].key =! null) {
 			var title = data.issues[i].key;
 		}
 		else {
-			var title = "No title"
+			var title = "No title";
 		}
 		if (data.issues[i].fields.summary =! null) {
 			var summary = data.issues[i].fields.summary;
 		}
 		else {
-			var summary = "No summary"
+			var summary = "No summary";
 		}
 		if (data.issues[i].fields.assignee =! null) {
 			var assignee = data.issues[i].fields.assignee.name;
 		}
 		else {
-			var assignee = "No assignee"
+			var assignee = "No assignee";
 		}
 		if (data.issues[i].fields.status =! null) {
 			var status = data.issues[i].fields.status.name;
 		}
 		else {
-			var status = "No status"
+			var status = "No status";
 		}
 		if (title =! "No title"){
 			var link = "https://jira.praeses.com/browse/" + title;
