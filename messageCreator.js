@@ -19,13 +19,19 @@ messageCreator.prototype.getData = function(name) {
 
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
-			var stringToReturn = TicketFormat(body);			
+			console.log("log 1: " + body);
+			var stringToReturn = testFun(body);			
 			console.log(stringToReturn);
 			return stringToReturn;
 		}
 	 }
 	
 	 request(options, callback);
+}
+
+function testFun(body){
+	console.log("log 2: " + body);
+	return "lol";
 }
 
 function TicketFormat(data) {
