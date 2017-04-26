@@ -59,13 +59,10 @@ function localWhereAreMyTickets(){
 }
 
 
-myFunction(localWhereAreMyTickets(), function(returnValue) {
+ var test = myFunction(localWhereAreMyTickets(), function(returnValue) {
   console.log(returnValue);
   // use the return value here instead of like a regular (non-evented) return value
 });
-
-myFunction();
-
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
