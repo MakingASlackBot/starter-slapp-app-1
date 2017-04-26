@@ -30,46 +30,21 @@ I will respond to the following messages:
 //run this to test API call
 //var jiraObject = messageCreator.getData("name");
 
-// var fakeData = getFakeData();
+var fakeData = getFakeData();
 
-// function getFakeData() { 
-	// var obj = require('./json/fake-data.json');
-	// return obj;
-// }
-
-function localWhereAreMyTickets(){
-	var options = {  	
-		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + name,
-		//url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20heather%20and%20status%20%3D%20"In%20Dev"',
-		url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
-		method: 'GET',
-		headers: {
-			 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
-			 'content-type' : 'application/json'
-		}
-	 };
-	
-	 request(options, function(err, res, body){		
-		if (err) {
-			console.log(err)
-			return
-		}	
-		return body;		
-	 });
+function getFakeData() { 
+	var obj = require('./json/fake-data.json');
+	return obj;
 }
 
-
- var test = myFunction(localWhereAreMyTickets(), function(returnValue) {
-  console.log(returnValue);
-  // use the return value here instead of like a regular (non-evented) return value
-});
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
 //var jiraObject = messageCreator.getData("heather");
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
-  msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
+ // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
+  msg.say(messageCreator.whereAreMyTickets(fakeData));
 })
 
 // response to the user typing "help"
