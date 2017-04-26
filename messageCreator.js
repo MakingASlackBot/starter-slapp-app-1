@@ -37,25 +37,25 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 
 	for(i = 0; i < data.issues.length; i++) {
 		if(data.issues[i].key =! null) {
-			var title = data.issues[2].key;
+			var title = data.issues[i].key;
 		}
 		else {
 			var title = "No title"
 		}
 		if (data.issues[i].fields.summary =! null) {
-			var summary = data.issues[2].fields.summary;
+			var summary = data.issues[i].fields.summary;
 		}
 		else {
 			var summary = "No summary"
 		}
-		if (data.issues[i].fields.assignee.name =! null) {
-			var assignee = data.issues[2].fields.assignee.name;
+		if (data.issues[i].fields.assignee =! null) {
+			var assignee = data.issues[i].fields.assignee.name;
 		}
 		else {
 			var assignee = "No assignee"
 		}
-		if (data.issues[i].fields.status.name =! null) {
-			var status = data.issues[2].fields.status.name;
+		if (data.issues[i].fields.status =! null) {
+			var status = data.issues[i].fields.status.name;
 		}
 		else {
 			var status = "No status"
