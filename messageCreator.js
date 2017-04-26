@@ -3,7 +3,7 @@ var messageCreator = function () {}
 const request = require('request')
 
 messageCreator.prototype.getData = function(name, functionName, urlString) {
-	//todo - make api call with parameters here.
+	//todo - make api call with parameters here. a
 	var url;
 	switch(urlString) {
 		case 'whereTickets':
