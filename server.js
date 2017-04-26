@@ -50,7 +50,7 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
  // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
-  msg.say(messageCreator.TicketFormat(whereAreMyTickets));
+  msg.say(messageCreator.TicketFormat(whatAmITesting));
 })
 
 // response to the user typing "help"
