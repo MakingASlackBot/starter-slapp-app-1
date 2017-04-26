@@ -65,7 +65,8 @@ function localWhereAreMyTickets(){
 //var jiraObject = messageCreator.getData("heather");
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
-	msg.say(localWhereAreMyTickets())
+  var test = localWhereAreMyTickets();
+	msg.say(test);
 })
 
 // response to the user typing "help"
