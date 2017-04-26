@@ -31,17 +31,13 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 	//todo: get json object via getData function
 	//data = getData(name);
 	
-	console.log(data.issues[2].key);
 	var MyTicketArray = [];
 	var MyTicketString = '';
 	for(i = 0; i < data.issues.length; i++) {
-		console.log(data.issues.length);
 		if(data.issues[i].key != null) {
-			console.log(data.issues[i].key);
 			var title = data.issues[i].key;
 		}
 		else {
-			console.log(data.issues[i].key);
 			var title = "No title";
 		}
 		if (data.issues[i].fields.summary != null) {
@@ -68,8 +64,8 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 		else {
 			var link = "https://jira.praeses.com/browse/";
 		}
-		MyTicketString += "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n``` \n";
-		MyTicketArray.push("```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```");
+		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n";
+		MyTicketArray.push("```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n");
 	}
 	return MyTicketString;
 }
