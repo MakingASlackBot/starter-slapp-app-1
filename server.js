@@ -30,10 +30,11 @@ I will respond to the following messages:
 //run this to test API call
 //var jiraObject = messageCreator.getData("name");
 
-var fakeData = getFakeData();
+var whereAreMyTickets = getFakeData('./json/fake-data.json');
+var whatAmITesting = getFakeData('./json/what-am-i-testing-data.json');
 
-function getFakeData() { 
-	var obj = require('./json/fake-data.json');
+function getFakeData(filePath) { 
+	var obj = require(filePath);
 	return obj;
 }
 
@@ -44,7 +45,12 @@ function getFakeData() {
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
  // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
-  msg.say(messageCreator.whereAreMyTickets(fakeData));
+  msg.say(messageCreator.TicketFormat(whereAreMyTickets));
+})
+
+slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
+ // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
+  msg.say(messageCreator.TicketFormat(whereAreMyTickets));
 })
 
 // response to the user typing "help"
