@@ -44,18 +44,19 @@ function getFakeData(filePath) {
 //var jiraObject = messageCreator.getData("heather");
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
- // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
-  
   var callback = function(stringToReturn){
     msg.say(stringToReturn);
   }
 
-  messageCreator.getData("lauren", callback);
+  messageCreator.getData("heather", callback, 'whereTickets');
 })
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
- // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
-  msg.say(messageCreator.TicketFormat(whatAmITesting));
+    var callback = function(stringToReturn){
+    msg.say(stringToReturn);
+  }
+
+  messageCreator.getData("lauren", callback, 'ticketsToTest');
 })
 
 // response to the user typing "help"
