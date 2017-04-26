@@ -67,7 +67,7 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 		else {
 			var link = "https://jira.praeses.com/browse/";
 		}
-		MyTicketString += "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
+		MyTicketString += "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n``` \n";
 		MyTicketArray.push("```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```");
 	}
 	return MyTicketString;
