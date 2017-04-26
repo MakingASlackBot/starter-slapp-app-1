@@ -37,9 +37,11 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 	for(i = 0; i < data.issues.length; i++) {
 		console.log(data.issues.length);
 		if(data.issues[i].key != null) {
+			console.log(data.issues[i].key);
 			var title = data.issues[i].key;
 		}
 		else {
+			console.log(data.issues[i].key);
 			var title = "No title";
 		}
 		if (data.issues[i].fields.summary != null) {
@@ -60,7 +62,7 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 		else {
 			var status = "No status";
 		}
-		if (title =! "No title"){
+		if (title != "No title"){
 			var link = "https://jira.praeses.com/browse/" + title;
 		}
 		else {
