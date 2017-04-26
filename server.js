@@ -45,7 +45,9 @@ function getFakeData(filePath) {
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
  // msg.say(messageCreator.whereAreMyTickets(localWhereAreMyTickets()));
-  msg.say(messageCreator.getData("heather"));
+  var something = messageCreator.getData("heather")
+  console.log("SOMETHING: " + something);
+  msg.say(something);
 })
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
