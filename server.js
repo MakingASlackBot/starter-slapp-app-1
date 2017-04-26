@@ -27,7 +27,7 @@ I will respond to the following messages:
 `
 
 //run this to test API call
-//var jiraObject = messageCreator.getData("name");
+var jiraObject = messageCreator.getData("name");
 
 // var fakeData = getFakeData();
 
