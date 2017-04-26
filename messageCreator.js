@@ -32,12 +32,44 @@ messageCreator.prototype.whereAreMyTickets = function(name, data) {
 	//data = getData(name);
 	
 	console.log(data.issues[2].key);
-	var title = data.issues[2].key;
-	var summary = data.issues[2].fields.summary;
-	var assignee = data.issues[2].fields.assignee.name;
-	var status = data.issues[2].fields.status.name;
-	var link = "https://jira.praeses.com/browse/" + title;
-	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
+	var MyTicketArray = [];
+	var MyTicketString = '';
+
+	for(i = 0; i < data.issues.length; i++) {
+		if(data.issues[i].key =! null) {
+			var title = data.issues[2].key;
+		}
+		else {
+			var title = "No title"
+		}
+		if (data.issues[i].fields.summary =! null) {
+			var summary = data.issues[2].fields.summary;
+		}
+		else {
+			var summary = "No summary"
+		}
+		if (data.issues[i].fields.assignee.name =! null) {
+			var assignee = data.issues[2].fields.assignee.name;
+		}
+		else {
+			var assignee = "No assignee"
+		}
+		if (data.issues[i].fields.status.name =! null) {
+			var status = data.issues[2].fields.status.name;
+		}
+		else {
+			var status = "No status"
+		}
+		if (title =! "No title"){
+			var link = "https://jira.praeses.com/browse/" + title;
+		}
+		else {
+			var link = "https://jira.praeses.com/browse/";
+		}
+		MyTicketString += "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
+		MyTicketArray.push("```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```");
+	}
+	return myTicketString;
 }
 
 module.exports = new messageCreator();
