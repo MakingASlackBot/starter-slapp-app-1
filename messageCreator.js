@@ -12,7 +12,8 @@ messageCreator.prototype.getData = function(name, functionName) {
 		//url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
 
 		//What am I testing?
-		url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20in%20(' + name + '.rc%2C%20' + name + '.uat%2C%20' + name + '.qa)',
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20in%20(' + name + '.rc%2C%20' + name + '.uat%2C%20' + name + '.qa)',
+		url: 'https://jira.praeses.com/rest/api/2/search?jql=status%20in%20("Ready%20for%20QA"%2C%20"In%20QA"%2C%20"Ready%20for%20UAT"%2C%20"In%20UAT"%2C%20"Ready%20for%20RC"%2C%20"In%20RC")%20AND%20labels%20in%20(' + name + '.qa%2C%20' + name + '.uat%2C%20' + name + '.rc)',
 		//Where are my tickets?
 		//url: 'https://jira.praeses.com/rest/api/2/search?jql=status%20in%20("In%20Dev"%2C%20"Ready%20for%20Code%20Review"%2C%20"In%20Code%20Review"%2C%20"Ready%20for%20QA"%2C%20"In%20QA"%2C%20"Ready%20for%20UAT"%2C%20"In%20UAT"%2C%20"Ready%20for%20RC"%2C%20"In%20RC")%20AND%20labels%20%3D%20' + name,
 		method: 'GET',
