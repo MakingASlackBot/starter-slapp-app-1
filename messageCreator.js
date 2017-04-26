@@ -20,7 +20,7 @@ messageCreator.prototype.getData = function(name, functionName) {
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
 			console.log("log 1: " + body);
-			var stringToReturn = TicketFormat(body);			
+			var stringToReturn = TicketFormat(JSON.parse(body));			
 			console.log(stringToReturn);
 			functionName(stringToReturn);
 		}
@@ -38,7 +38,7 @@ function TicketFormat(data) {
 	
 	//todo: foreach	
 	//todo: get json object via getData function				
-	console.log("Log 3: " + data[1]);
+	console.log("Log 3: " + data.issues[0]);
 	return ":sob:";
 
 	var MyTicketArray = [];
