@@ -35,6 +35,7 @@ messageCreator.prototype.TicketFormat = function(dataWeDontNeed) {
 	//todo: get json object via getData function		
 	
 	var data = getData("heather");
+	return;
 
 	var MyTicketArray = [];
 	var MyTicketString = '';
