@@ -8,8 +8,9 @@ messageCreator.prototype.getData = function(name, functionName) {
 	var options = {  	
 		//url: https://jira.praeses.com/rest/api/2/search?jql=labels%20in%20(heather.rc%2C%20heather.uat%2C%20heather.qa)
 		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + name,
-		url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20' + name + '%20and%20status%20%3D%20"In%20Dev"',
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20' + name + '%20and%20status%20%3D%20"In%20Dev"',
 		//url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
+		url: 'https://jira.praeses.com/rest/api/2/search?jql=status%20in%20("In%20Dev"%2C%20"Ready%20for%20Code%20Review"%2C%20"In%20Code%20Review"%2C%20"Ready%20for%20QA"%2C%20"In%20QA"%2C%20"Ready%20for%20UAT"%2C%20"In%20UAT"%2C%20"Ready%20for%20RC"%2C%20"In%20RC")%20AND%20labels%20%3D%20' + name,
 		method: 'GET',
 		headers: {
 			 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
