@@ -49,7 +49,7 @@ function TicketFormat(data) {
 			var summary = "No summary";
 		}
 		if (data.issues[i].fields.assignee != null) {
-			var assignee = data.issues[i].fields.assignee.name;
+			var assignee = data.issues[i].fields.assignee.displayName;
 		}
 		else {
 			var assignee = "No assignee";
