@@ -39,9 +39,8 @@ I will respond to the following messages:
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
-
+var jiraObject = messageCreator.getData("heather");
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
-	var jiraObject = messageCreator.getData("heather");
 	console.log("SECOND BODY: " + jiraObject);
 	msg.say(messageCreator.whereAreMyTickets(jiraObject))
 })

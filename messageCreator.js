@@ -72,4 +72,4 @@ messageCreator.prototype.whereAreMyTickets = function(data) {
 	return MyTicketString;
 }
 
-var self = module.exports = new messageCreator();
+module.exports = new messageCreator();
