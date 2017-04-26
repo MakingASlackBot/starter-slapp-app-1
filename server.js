@@ -41,14 +41,8 @@ I will respond to the following messages:
 //*********************************************
 //var jiraObject = messageCreator.getData("heather");
 
-function callApi(){
-	return messageCreator.getData("heather");
-}
-
 slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
-	var jiraObject = callApi();
-	console.log("SECOND BODY: " + jiraObject);
-	msg.say(messageCreator.whereAreMyTickets(jiraObject))
+	msg.say(messageCreator.whereAreMyTickets())
 })
 
 // response to the user typing "help"

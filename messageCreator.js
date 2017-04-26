@@ -26,12 +26,30 @@ messageCreator.prototype.getData = function(name) {
 	 });
 }
 
-messageCreator.prototype.whereAreMyTickets = function(data) {
+messageCreator.prototype.whereAreMyTickets = function() {
 	
 	//todo: foreach
 	
 	//todo: get json object via getData function	
-	console.log("THIRD BODY: " + data);
+	var options = {  	
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=label=' + name,
+		//url: 'https://jira.praeses.com/rest/api/2/search?jql=labels%20%3D%20heather%20and%20status%20%3D%20"In%20Dev"',
+		url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',  //alternate URL for testing
+		method: 'GET',
+		headers: {
+			 'Authorization' : 'Basic am9zY2llbmNlZmFpcnRlc3R1c2VyOm5oRGFnMixlS0Q9Vk0zKlU=',
+			 'content-type' : 'application/json'
+		}
+	 };
+	
+	 request(options, function(err, res, body){		
+		if (err) {
+			console.log(err)
+			return
+		}	
+		console.log("FIRST BODY: " + body);
+		var data = body;
+	 });
 	
 	var MyTicketArray = [];
 	var MyTicketString = '';
