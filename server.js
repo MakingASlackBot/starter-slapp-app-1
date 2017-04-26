@@ -5,6 +5,7 @@ const Slapp = require('slapp')
 const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const request = require('request')
+var messageCreator = require('./messageCreator');
 
 const options = {  
     url: 'https://jira.praeses.com/rest/api/2/search?jql=assignee=mstuart',
@@ -63,25 +64,12 @@ function getFakeData() {
 	return obj;
 }
 
-function getMessages() {
-	
-	//todo: foreach
-	
-	console.log(fakeData.issues[2].key);
-	var title = fakeData.issues[2].key;
-	var summary = fakeData.issues[2].fields.summary;
-	var assignee = fakeData.issues[2].fields.assignee.name;
-	var status = fakeData.issues[2].fields.status.name;
-	var link = "https://jira.praeses.com/browse/" + title;
-	return "```" + title + "\n" + summary + "\n" + assignee + "\n" + link + "\n```";
-}
-
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
 
-slapp.message('Where are my tickets?', ['mention', 'direct_message'], (msg) => {	
-	msg.say(getMessages())
+slapp.message('Where are my tickets?', ['direct_message'], (msg) => {	
+	msg.say(messageCreator.whereAreMyTickets("name here", fakeData))
 })
 
 // response to the user typing "help"
