@@ -20,7 +20,7 @@ messageCreator.prototype.getData = function(name, functionName) {
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
 			console.log("log 1: " + body);
-			var stringToReturn = testFun(body);			
+			var stringToReturn = TicketFormat(body);			
 			console.log(stringToReturn);
 			functionName(stringToReturn);
 		}
