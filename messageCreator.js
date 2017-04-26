@@ -2,7 +2,7 @@ var messageCreator = function () {}
 
 const request = require('request')
 
-function getData(name) {
+messageCreator.prototype.getData = function(name) {
 	//todo - make api call with parameters here.
 	
 	var options = {  	
@@ -19,23 +19,19 @@ function getData(name) {
 
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
-			var info = body;
-			console.log("HELLOOOOO");
-			console.log(info);
-			return body;
+			var stringToReturn = TicketFormat(body);			
+			console.log(stringToReturn);
+			return stringToReturn;
 		}
 	 }
 	
 	 request(options, callback);
 }
 
-messageCreator.prototype.TicketFormat = function(dataWeDontNeed) {
+function TicketFormat(data) {
 	
 	//todo: foreach	
-	//todo: get json object via getData function		
-	
-	var data = getData("heather");
-	return;
+	//todo: get json object via getData function				
 
 	var MyTicketArray = [];
 	var MyTicketString = '';
