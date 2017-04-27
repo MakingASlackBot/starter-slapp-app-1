@@ -40,10 +40,7 @@ function getUser(userID, msg, callback1){
 	 function callback0(err, res, body){
 		if (!err && res.statusCode == 200){			
 			var userObject = JSON.parse(body);
-			//console.log(userObject);
-			//console.log(userObject.user.profile.first_name);
 			callback1(userObject.user.profile.first_name, callback);
-			 
 		}
 	 }
 	
@@ -51,22 +48,10 @@ request(options, callback0);
 
 }
 
-//var name1 = getUser("U5508DRJS");
-
-
-var whereAreMyTickets = getFakeData('./json/fake-data.json');
-var whatAmITesting = getFakeData('./json/what-am-i-testing-data.json');
-
-function getFakeData(filePath) { 
-	var obj = require(filePath);
-	return obj;
-}
-
 //*********************************************
 // Setup different handlers for messages
 //*********************************************
-//var jiraObject = messageCreator.getData("heather");
-
+// response to the user typing "Where are my tickets?"
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
   
   var callback1 = function(userName, callback){
@@ -76,6 +61,7 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
   getUser(msg.body.event.user, msg, callback1);
 })
 
+// response to the user typing "What am I testing?"
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
   
   var callback1 = function(userName, callback){
