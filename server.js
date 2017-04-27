@@ -70,27 +70,17 @@ function getFakeData(filePath) {
 //var jiraObject = messageCreator.getData("heather");
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
-// var callback = function(stringToReturn){
-    // msg.say(stringToReturn);
-  // }  
   
   var callback1 = function(userName, callback){
 	  messageCreator.getData(userName, callback, 'whereTickets')
   }
   
   getUser(msg.body.event.user, msg, callback1);
-  
-  //console.log(msg.body.event.user);
-  //var name = getUser(msg.user.id);
-  //console.log(msg._slapp.client.users);
-  //console.log(msg._slapp.client.users[1].get);
-  //getUser(msg.body.event.user, callback, callback1);
-  //messageCreator.getData("heather", callback, 'whereTickets');
-
 })
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
-  var callback1 = function(userName, stringToReturn){
+  
+  var callback1 = function(userName, callback){
 	messageCreator.getData(userName, callback, 'ticketsToTest');
   }
 
