@@ -6,7 +6,6 @@ const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const request = require('request')
 var messageCreator = require('./messageCreator');
-var promise = require('promise');
 
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
