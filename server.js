@@ -30,6 +30,10 @@ I will respond to the following messages:
 
 function getUser(userID, callback, callback1){
 	
+	var callback = function(stringToReturn){
+		msg.say(stringToReturn);
+	}  
+	
 	var options = {  			
 		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=' + userID,  //U5508DRJS 
 		method: 'GET',
@@ -66,15 +70,15 @@ function getFakeData(filePath) {
 //var jiraObject = messageCreator.getData("heather");
 
 slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {	
-  var callback = function(stringToReturn){
-    msg.say(stringToReturn);
-  }
+// var callback = function(stringToReturn){
+    // msg.say(stringToReturn);
+  // }  
   
   var callback1 = function(userName, callback){
 	  messageCreator.getData(userName, callback, 'whereTickets')
   }
   
-  getUser(msg.body.event.user, callback, callback1);
+  getUser(msg.body.event.user, callback1);
   
   //console.log(msg.body.event.user);
   //var name = getUser(msg.user.id);
