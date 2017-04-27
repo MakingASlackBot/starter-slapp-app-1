@@ -30,17 +30,17 @@ I will respond to the following messages:
 //run this to test API call 
 //var jiraObject = messageCreator.getData("name");
 
-function getUser(){
+function getUser(userID){
 	
 	var options = {  			
-		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=U5508DRJS',
+		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=' + userID,  //U5508DRJS
 		method: 'GET',
 	 };
 
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
 			console.log("User incoming: ");
-			console.log(body);
+			console.log(JSON.parse(body)).user.profile.first_name);
 		}
 	 }
 	
