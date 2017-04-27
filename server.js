@@ -41,8 +41,9 @@ function getUser(userID){
 		if (!err && res.statusCode == 200){
 			console.log("User incoming: ");
 			var userObject = JSON.parse(body);
-			console.log(userObject);
-			console.log(userObject.user.profile.first_name);
+			//console.log(userObject);
+			//console.log(userObject.user.profile.first_name);
+			return userObject.user.profile.first_name;
 		}
 	 }
 	
@@ -50,7 +51,9 @@ request(options, callback);
 
 }
 
-getUser("U5508DRJS");
+var name1 = getUser("U5508DRJS");
+console.log("I hope there are no async issues, " + name1 + ".");
+
 
 var whereAreMyTickets = getFakeData('./json/fake-data.json');
 var whatAmITesting = getFakeData('./json/what-am-i-testing-data.json');
@@ -69,7 +72,7 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
   var callback = function(stringToReturn){
     msg.say(stringToReturn);
   }
-  //console.log(msg);
+  console.log(msg);
   //var name = getUser(msg.user.id);
   //console.log(msg._slapp.client.users);
   //console.log(msg._slapp.client.users[1].get);
