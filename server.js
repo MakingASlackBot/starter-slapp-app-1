@@ -28,7 +28,7 @@ I will respond to the following messages:
 `
 
 
-function getUser(userID, callback, callback1){
+function getUser(userID, msg, callback1){
 	
 	var callback = function(stringToReturn){
 		msg.say(stringToReturn);
@@ -78,13 +78,13 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
 	  messageCreator.getData(userName, callback, 'whereTickets')
   }
   
-  getUser(msg.body.event.user, callback1);
+  getUser(msg.body.event.user, msg, callback1);
   
   //console.log(msg.body.event.user);
   //var name = getUser(msg.user.id);
   //console.log(msg._slapp.client.users);
   //console.log(msg._slapp.client.users[1].get);
-  getUser(msg.body.event.user, callback, callback1);
+  //getUser(msg.body.event.user, callback, callback1);
   //messageCreator.getData("heather", callback, 'whereTickets');
 
 })
