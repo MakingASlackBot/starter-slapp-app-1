@@ -42,6 +42,7 @@ function getUser(userID){
 			console.log("User incoming: ");
 			var userObject = JSON.parse(body);
 			console.log(userObject);
+			console.log(userObject.user[0].profile.first_name);
 		}
 	 }
 	
@@ -49,7 +50,7 @@ request(options, callback);
 
 }
 
-getUser();
+getUser("U5508DRJS");
 
 var whereAreMyTickets = getFakeData('./json/fake-data.json');
 var whatAmITesting = getFakeData('./json/what-am-i-testing-data.json');
