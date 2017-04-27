@@ -90,11 +90,12 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
 })
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
-    var callback = function(stringToReturn){
-    msg.say(stringToReturn);
+  var callback1 = function(stringToReturn){
+	messageCreator.getData(userName, callback, 'ticketsToTest');
   }
 
-  messageCreator.getData("lauren", callback, 'ticketsToTest');
+  getUser(msg.body.event.user, msg, callback1);
+  
 })
 
 // response to the user typing "help"
