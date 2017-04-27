@@ -40,7 +40,8 @@ function getUser(userID){
 	 function callback(err, res, body){
 		if (!err && res.statusCode == 200){
 			console.log("User incoming: ");
-			console.log(JSON.parse(body)).user.profile.first_name);
+			var userObject = JSON.parse(body);
+			console.log(userObject.user.profile.first_name);
 		}
 	 }
 	
