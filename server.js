@@ -27,8 +27,6 @@ I will respond to the following messages:
 \`attachment\` - to see a Slack attachment message.
 `
 
-//run this to test API call 
-//var jiraObject = messageCreator.getData("name");
 
 function getUser(userID){
 	
@@ -38,8 +36,7 @@ function getUser(userID){
 	 };
 
 	 function callback(err, res, body){
-		if (!err && res.statusCode == 200){
-			console.log("User incoming: ");
+		if (!err && res.statusCode == 200){			
 			var userObject = JSON.parse(body);
 			//console.log(userObject);
 			//console.log(userObject.user.profile.first_name);
@@ -51,8 +48,7 @@ request(options, callback);
 
 }
 
-var name1 = getUser("U5508DRJS");
-console.log("I hope there are no async issues, " + name1 + ".");
+//var name1 = getUser("U5508DRJS");
 
 
 var whereAreMyTickets = getFakeData('./json/fake-data.json');
@@ -72,7 +68,7 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
   var callback = function(stringToReturn){
     msg.say(stringToReturn);
   }
-  console.log(msg);
+  console.log(msg.body.event.user);
   //var name = getUser(msg.user.id);
   //console.log(msg._slapp.client.users);
   //console.log(msg._slapp.client.users[1].get);
