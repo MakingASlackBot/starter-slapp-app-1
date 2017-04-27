@@ -65,10 +65,12 @@ function TicketFormat(data) {
 		if (data.issues[i].fields.assignee != null) {
 			var assignee = data.issues[i].fields.assignee.displayName;
 			var assigneeEmail = data.issues[i].fields.assignee.emailAddress;
+			var assignMessage = assignee + ' mailto:' + assigneeEmail;
 		}
 		else {
 			var assignee = "No assignee";
 			var assigneeEmail = ' ';
+			var assignMessage = "No Assignee";
 		}
 		if (data.issues[i].fields.status != null) {
 			var status = data.issues[i].fields.status.name;
@@ -82,8 +84,8 @@ function TicketFormat(data) {
 		else {
 			var link = "https://jira.praeses.com/browse/";
 		}
-		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignee + ' mailto:' + assigneeEmail + "\n" + link + "\n``` \n";
-		MyTicketArray.push(" ```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n ");
+		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignMessage + "\n" + link + "\n``` \n";
+		MyTicketArray.push("```" + title + " - " + summary + "\n" + status  + "\n" + assignMessage + "\n" + link + "\n``` \n");
 	}
 	if(MyTicketString == '') {
 		MyTicketString = 'You have no tickets at this time';
