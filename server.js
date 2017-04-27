@@ -21,10 +21,8 @@ var slapp = Slapp({
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
-\`hi\` - to demonstrate a conversation that tracks state.
-\`thanks\` - to demonstrate a simple response.
-\`<type-any-other-text>\` - to demonstrate a random emoticon response, some of the time :wink:.
-\`attachment\` - to see a Slack attachment message.
+\`Where are my Tickets?\` - to see tickets that have a label with your name in it.
+\`What am I testing?\` - to see what tickets have your name and are ready for testing.
 `
 
 

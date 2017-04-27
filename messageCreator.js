@@ -64,6 +64,7 @@ function TicketFormat(data) {
 		}
 		if (data.issues[i].fields.assignee != null) {
 			var assignee = data.issues[i].fields.assignee.displayName;
+			var assigneeEmail = data.issues[i].fields.assignee.emailAddress;
 		}
 		else {
 			var assignee = "No assignee";
@@ -80,7 +81,7 @@ function TicketFormat(data) {
 		else {
 			var link = "https://jira.praeses.com/browse/";
 		}
-		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n";
+		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignee + ' mailto:' + assigneeEmail + "\n" + link + "\n``` \n";
 		MyTicketArray.push(" ```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n ");
 	}
 	if(MyTicketString == '') {
