@@ -83,6 +83,9 @@ function TicketFormat(data) {
 		MyTicketString += "```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n";
 		MyTicketArray.push(" ```" + title + " - " + summary + "\n" + status  + "\n" + assignee + "\n" + link + "\n``` \n ");
 	}
+	if(MyTicketString == '') {
+		MyTicketString = 'You have no tickets at this time';
+	}
 	return MyTicketString;
 }
 
