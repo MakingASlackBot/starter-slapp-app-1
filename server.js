@@ -30,6 +30,26 @@ I will respond to the following messages:
 //run this to test API call 
 //var jiraObject = messageCreator.getData("name");
 
+function getUser(){
+	
+	var options = {  			
+		url: https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=U5508DRJS,
+		method: 'GET',
+	 };
+
+	 function callback(err, res, body){
+		if (!err && res.statusCode == 200){
+			console.log("User incoming: ");
+			console.log(body);
+		}
+	 }
+	
+request(options, callback);
+
+}
+
+getUser();
+
 var whereAreMyTickets = getFakeData('./json/fake-data.json');
 var whatAmITesting = getFakeData('./json/what-am-i-testing-data.json');
 
