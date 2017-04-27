@@ -33,7 +33,7 @@ I will respond to the following messages:
 function getUser(){
 	
 	var options = {  			
-		url: https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=U5508DRJS,
+		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=U5508DRJS',
 		method: 'GET',
 	 };
 
