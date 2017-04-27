@@ -35,7 +35,7 @@ function getUser(userID, callback, callback1){
 		method: 'GET',
 	 };
 
-	 function callback(err, res, body){
+	 function callback0(err, res, body){
 		if (!err && res.statusCode == 200){			
 			var userObject = JSON.parse(body);
 			//console.log(userObject);
@@ -45,7 +45,7 @@ function getUser(userID, callback, callback1){
 		}
 	 }
 	
-request(options, callback);
+request(options, callback0);
 
 }
 
