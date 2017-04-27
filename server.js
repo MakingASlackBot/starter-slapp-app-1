@@ -6,6 +6,7 @@ const ConvoStore = require('slapp-convo-beepboop')
 const Context = require('slapp-context-beepboop')
 const request = require('request')
 var messageCreator = require('./messageCreator');
+var promise = require('promise');
 
 // use `PORT` env var on Beep Boop - default to 3000 locally
 var port = process.env.PORT || 3000
@@ -28,10 +29,10 @@ I will respond to the following messages:
 `
 
 
-function getUser(userID){
+function getUser(userID, callback, callback1){
 	
 	var options = {  			
-		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=' + userID,  //U5508DRJS
+		url: 'https://slack.com/api/users.info?token=xoxb-173658510769-DkVilQ4Cb94aJY3rgkCyiKJm&user=' + userID,  //U5508DRJS 
 		method: 'GET',
 	 };
 
@@ -40,7 +41,8 @@ function getUser(userID){
 			var userObject = JSON.parse(body);
 			//console.log(userObject);
 			//console.log(userObject.user.profile.first_name);
-			return userObject.user.profile.first_name;
+			callback1(userObject.user.profile.first_name, callback);
+			 
 		}
 	 }
 	
@@ -68,11 +70,20 @@ slapp.message('Where are my tickets?', ['direct_message'], (msg, text) => {
   var callback = function(stringToReturn){
     msg.say(stringToReturn);
   }
-  console.log(msg.body.event.user);
+  
+  var callback1 = function(userName, callback){
+	  messageCreator.getData(userName, callback, 'whereTickets')
+  }
+  
+  getUser(msg.body.event.user, callback, callback1);
+  
+  //console.log(msg.body.event.user);
   //var name = getUser(msg.user.id);
   //console.log(msg._slapp.client.users);
   //console.log(msg._slapp.client.users[1].get);
-  messageCreator.getData("heather", callback, 'whereTickets');
+  getUser(msg.body.event.user, callback, callback1);
+  //messageCreator.getData("heather", callback, 'whereTickets');
+
 })
 
 slapp.message('What am I testing?', ['direct_message'], (msg, text) => {	
