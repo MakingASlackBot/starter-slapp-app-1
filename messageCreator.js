@@ -68,6 +68,7 @@ function TicketFormat(data) {
 		}
 		else {
 			var assignee = "No assignee";
+			var assigneeEmail = ' ';
 		}
 		if (data.issues[i].fields.status != null) {
 			var status = data.issues[i].fields.status.name;
